@@ -15,7 +15,7 @@ spreadsheet_id = os.getenv("SPREADSHEET_ID")
 files = [
     os.path.join(download_path, f)
     for f in os.listdir(download_path)
-    if f.endswith(".xlsx")
+    if f.startswith("BRANCH STOCK") and f.endswith(".xlsx")
 ]
 
 latest_file = max(files, key=os.path.getctime)
